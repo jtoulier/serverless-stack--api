@@ -1,0 +1,69 @@
+2019-11-08          195/945     20.6%   https://serverless-stack.com/chapters/adding-links-in-the-navbar.html
+2019-11-09  +133    327/945     34.6%   https://serverless-stack.com/chapters/redirect-on-login.html
+2019-11-10  
+
+Publishable key
+pk_test_SOZAfiftSorh3brhoYDFGFgT00oeY7GUs0
+
+Secret key
+sk_test_NpvFi8KIA37gL1pcGaDacgHh00vsD3tmXO
+
+
+npx aws-api-gateway-cli-test --username e6045ff1-1a17-4c3c-85c6-d484d599055a --password Passw0rd! --user-pool-id us-east-1_v15aggVzn --app-client-id kdndrp1rf1hahsbn8ojd17ltk --cognito-region us-east-1 --identity-pool-id us-east-1:de6bd255-0ca1-48b1-a055-cab2f426ec54 --invoke-url https://i3oybxujnb.execute-api.us-east-1.amazonaws.com/prod --api-gateway-region us-east-1 --path-template /notes --method POST --body "{\"content\":\"hello world\",\"attachment\":\"hello.jpg\"}"
+
+
+aws cognito-idp sign-up \
+  --region us-east-1 \
+  --client-id kdndrp1rf1hahsbn8ojd17ltk \
+  --username admin@example.com \
+  --password Passw0rd!
+
+aws cognito-idp admin-confirm-sign-up  --region us-east-1 --user-pool-id us-east-1_v15aggVzn --username admin@example.com
+
+aws cognito-idp sign-up --region us-east-1   --client-id kdndrp1rf1hahsbn8ojd17ltk --username jtoulier@gmail.com --password Passw0rd!
+
+aws cognito-idp admin-confirm-sign-up  --region us-east-1 --user-pool-id us-east-1_v15aggVzn --username jtoulier@gmail.com
+
+HErramientas de CI/CD para serverless
+Seed (backend)
+Netlify (frontend)
+
+
+Service Information
+service: notes-app-2-api
+stage: dev
+region: us-east-1
+stack: notes-app-2-api-dev
+resources: 50
+api keys:
+  None
+endpoints:
+  POST - https://076f4vy5bb.execute-api.us-east-1.amazonaws.com/dev/notes
+  GET - https://076f4vy5bb.execute-api.us-east-1.amazonaws.com/dev/notes/{id}
+  GET - https://076f4vy5bb.execute-api.us-east-1.amazonaws.com/dev/notes
+  PUT - https://076f4vy5bb.execute-api.us-east-1.amazonaws.com/dev/notes/{id}
+  DELETE - https://076f4vy5bb.execute-api.us-east-1.amazonaws.com/dev/notes/{id}
+  POST - https://076f4vy5bb.execute-api.us-east-1.amazonaws.com/dev/billing
+functions:
+  create: notes-app-2-api-dev-create
+  get: notes-app-2-api-dev-get
+  list: notes-app-2-api-dev-list
+  update: notes-app-2-api-dev-update
+  delete: notes-app-2-api-dev-delete
+  billing: notes-app-2-api-dev-billing
+layers:
+  None
+
+Stack Outputs
+AttachmentsBucketName: notes-app-2-api-dev-attachmentsbucket-1ao7x6xw4c5ou
+UserPoolClientId: 2vsjrjb2e6hu3oni2d5fmee8ro
+UserPoolId: us-east-1_YzVlM4hBJ
+DeleteLambdaFunctionQualifiedArn: arn:aws:lambda:us-east-1:199546789576:function:notes-app-2-api-dev-delete:1
+CreateLambdaFunctionQualifiedArn: arn:aws:lambda:us-east-1:199546789576:function:notes-app-2-api-dev-create:1
+GetLambdaFunctionQualifiedArn: arn:aws:lambda:us-east-1:199546789576:function:notes-app-2-api-dev-get:1
+UpdateLambdaFunctionQualifiedArn: arn:aws:lambda:us-east-1:199546789576:function:notes-app-2-api-dev-update:1
+IdentityPoolId: us-east-1:71ea0314-c644-4968-9fb2-2d54e79d8edd
+BillingLambdaFunctionQualifiedArn: arn:aws:lambda:us-east-1:199546789576:function:notes-app-2-api-dev-billing:1
+ListLambdaFunctionQualifiedArn: arn:aws:lambda:us-east-1:199546789576:function:notes-app-2-api-dev-list:1
+ServiceEndpoint: https://076f4vy5bb.execute-api.us-east-1.amazonaws.com/dev
+ServerlessDeploymentBucketName: notes-app-2-api-dev-serverlessdeploymentbucket-zc75vab97m2k
