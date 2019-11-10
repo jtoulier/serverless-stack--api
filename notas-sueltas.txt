@@ -1,10 +1,10 @@
 2019-11-08          195/945     20.6%   https://serverless-stack.com/chapters/adding-links-in-the-navbar.html
 2019-11-09  +133    327/945     34.6%   https://serverless-stack.com/chapters/redirect-on-login.html
-2019-11-10  +33     359/945
+2019-11-10  +57     383/945     40.5%   https://serverless-stack.com/chapters/set-custom-domains-through-seed.html
 
 USER:               user-seed-serverless
-ACCESS KEY ID:      AKIAS45PKL3EDWONPT37
-SECRET ACCESS KEY:  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
+ACCESS KEY ID:      
+SECRET ACCESS KEY:  
 
 Publishable key
 pk_test_SOZAfiftSorh3brhoYDFGFgT00oeY7GUs0
