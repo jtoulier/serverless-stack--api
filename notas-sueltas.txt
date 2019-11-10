@@ -76,3 +76,18 @@ ServerlessDeploymentBucketName: notes-app-2-api-dev-serverlessdeploymentbucket-z
 Seed
 jtoulier@gmail.com
 gT0$oeY7GUs0
+
+
+
+aws cognito-idp sign-up --region us-east-1 --client-id 2vsjrjb2e6hu3oni2d5fmee8ro --username admin@example.com --password Passw0rd!
+aws cognito-idp admin-confirm-sign-up --region us-east-1 --user-pool-id us-east-1_YzVlM4hBJ --username admin@example.com
+
+aws cognito-idp sign-up --region us-east-1 --client-id 48fjkjq5nun3mu3ajtsj8g7c7q --username admin@example.com --password Passw0rd!
+aws cognito-idp admin-confirm-sign-up --region us-east-1 --user-pool-id us-east-1_x3Of2nd1q --username admin@example.com
+
+
+DEV
+npx aws-api-gateway-cli-test --username admin@example.com --password Passw0rd! --user-pool-id us-east-1_YzVlM4hBJ --app-client-id 2vsjrjb2e6hu3oni2d5fmee8ro --cognito-region us-east-1 --identity-pool-id us-east-1:71ea0314-c644-4968-9fb2-2d54e79d8edd  --invoke-url https://076f4vy5bb.execute-api.us-east-1.amazonaws.com/dev/ --api-gateway-region us-east-1 --path-template notes --method POST --body "{\"content\":\"hello world dev\",\"attachment\":\"hello.jpg\"}"
+
+PROD
+npx aws-api-gateway-cli-test --username admin@example.com --password Passw0rd! --user-pool-id us-east-1_x3Of2nd1q --app-client-id 48fjkjq5nun3mu3ajtsj8g7c7q --cognito-region us-east-1 --identity-pool-id us-east-1:00b4457e-3086-4fae-83bd-91bacadbfa10 --invoke-url https://v2r8acfgza.execute-api.us-east-1.amazonaws.com/prod/ --api-gateway-region us-east-1 --path-template notes --method POST --body "{\"content\":\"hello world\",\"attachment\":\"hello.jpg\"}"
